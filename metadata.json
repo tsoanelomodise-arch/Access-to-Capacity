@@ -1,0 +1,6 @@
+{
+  "name": "Access to Capability",
+  "description": "Redesigned portal for the South African Transformation Fund's Access to Capability program, including real-time administrative dashboards for provider ratings, performance tracking, and user gap intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
