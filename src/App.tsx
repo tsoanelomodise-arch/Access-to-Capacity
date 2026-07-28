@@ -121,16 +121,16 @@ export default function App() {
         </section>
       ) : activeView === "flow" ? (
         <section className="py-8 sm:py-12 bg-gradient-to-br from-[#e2f3ec] via-[#f7f1ec] to-[#e5e9f8] flex-grow min-h-screen" id="system-process-flow-page">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="w-full px-4 sm:px-6 lg:px-8 space-y-6">
             <SystemProcessFlow showAnnotations={showAnnotations} />
           </div>
         </section>
       ) : activeView === "apply" ? (
-        <section className="py-8 sm:py-12 bg-gradient-to-br from-[#e2f3ec] via-[#f7f1ec] to-[#e5e9f8] flex-grow min-h-screen" id="application-dossier-page">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <section className="py-8 sm:py-12 bg-gradient-to-r from-[#e3f2e6] via-[#eef6e8] to-[#faf8e8] flex-grow min-h-screen" id="application-dossier-page">
+          <div className="w-full px-4 sm:px-6 lg:px-8 space-y-6">
             {/* Breadcrumb Navigation (Hidden per design spec) */}
             <nav className="hidden text-[10px] sm:text-xs font-mono font-bold tracking-widest text-slate-500 uppercase" aria-label="Breadcrumb">
-              <ol className="inline-flex items-center space-x-1 md:space-x-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/60 shadow-xs">
+              <ol className="inline-flex items-center space-x-1 md:space-x-2 bg-white px-4 py-2 rounded-full border border-slate-200/80 shadow-xs">
                 <li>
                   <a href="#" onClick={(e) => { e.preventDefault(); setActiveView("capability"); }} className="hover:text-slate-900 transition-colors">{fmtText("HOME_PORTAL", showAnnotations)}</a>
                 </li>
@@ -146,15 +146,12 @@ export default function App() {
             </nav>
 
             {/* Standalone Page Header Card */}
-            <div className="bg-white/80 backdrop-blur-xl border border-white/80 rounded-[2.25rem] p-8 sm:p-10 shadow-xl shadow-slate-200/50 space-y-4 text-left relative overflow-hidden">
+            <div className="bg-gradient-to-r from-[#e3f2e6]/70 via-[#eef6e8]/70 to-[#faf8e8]/70 backdrop-blur-md border border-white/80 rounded-[2.25rem] p-8 sm:p-10 shadow-xl shadow-slate-200/50 space-y-4 text-left relative overflow-hidden">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/60 pb-6">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-800 shrink-0 shadow-xs">
-                    <IntakeDossier className="w-6 h-6" />
-                  </div>
                   <div>
                     {showAnnotations && (
-                      <span className="text-[10px] font-sans font-bold text-emerald-800 uppercase tracking-widest block mb-1">
+                      <span className="text-[10px] font-sans font-bold text-slate-500 uppercase tracking-widest block mb-1">
                         SERVICE PROVIDER AUTHENTICATION INTAKE PORTAL
                       </span>
                     )}
@@ -164,19 +161,19 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 self-start sm:self-auto">
-                  <div className="bg-emerald-100/90 text-emerald-900 border border-emerald-300/80 px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-2xs">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+                  <div className="bg-slate-900 text-white border border-slate-800 px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
+                    <ShieldCheck className="w-3.5 h-3.5 text-slate-300" />
                     <span>VERIFIED_INTAKE</span>
                   </div>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 font-sans font-medium leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-500 font-sans font-medium leading-relaxed max-w-2xl">
                 Complete the official registration and verification dossier below to enrol your SMME into the Service Provider Authentication developmental programs. All submissions undergo live CIPC and SARS compliance verification.
               </p>
             </div>
 
             {/* Form Container */}
-            <div className="bg-white/80 backdrop-blur-xl border border-white/80 rounded-[2.25rem] p-6 sm:p-8 shadow-xl shadow-slate-200/50">
+            <div className="bg-white border border-slate-100/80 rounded-[2.25rem] p-6 sm:p-8 shadow-xl shadow-slate-200/50">
               <div className="hidden mb-6 pb-4 border-b border-slate-200/60 items-center justify-between">
                 <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest flex items-center gap-1">
                   {showAnnotations && <span>[FORM_VIEW_SEC_05]</span>}
@@ -191,7 +188,7 @@ export default function App() {
         <section id="capability-landing-view">
           {/* Hero Section */}
           <section id="hero-section" className="relative pt-10 pb-16 sm:pb-20 lg:pt-14 lg:pb-24 border-b border-slate-200/80">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-4 sm:px-6 lg:px-8">
               
               {/* Breadcrumb Row */}
               <nav className="flex mb-6 text-[10px] sm:text-xs font-mono font-bold tracking-widest text-slate-500 uppercase" aria-label="Breadcrumb">
@@ -305,7 +302,7 @@ export default function App() {
 
           {/* Section: What is Access to Capability? */}
           <section id="what-is-section" className="py-16 bg-white border-b border-slate-200/80">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div className="w-full px-4 sm:px-6 lg:px-8 text-center space-y-4">
               {showAnnotations && <span className="font-mono text-[9px] font-bold text-slate-400 block tracking-widest">[W_1.03: SECTION_MODULE_SUMMARY]</span>}
               <h2 className="font-mono font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight" id="what-is-title">
                 What is Access to Capability?
@@ -318,7 +315,7 @@ export default function App() {
 
           {/* Section: What support can you receive? */}
           <section id="support-services-section" className="py-20 sm:py-24 border-b border-slate-200/80">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+            <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
               
               {/* Section Header */}
               <div className="text-center space-y-2">
@@ -343,7 +340,7 @@ export default function App() {
 
           {/* Section: How it works */}
           <section id="how-it-works-section" className="py-20 bg-slate-100/50 border-b border-slate-200/80 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12">
               
               {/* Section Header */}
               <div className="text-center space-y-2">
@@ -364,7 +361,7 @@ export default function App() {
 
           {/* Section: Why apply? */}
           <section id="why-apply-section" className="py-20 sm:py-24 border-b border-slate-200/80">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+            <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
               
               {/* Section Header */}
               <div className="text-center space-y-2">
@@ -403,7 +400,7 @@ export default function App() {
 
           {/* Double Column Grid: Before You Apply & FAQ */}
           <section id="requirements-faq-section" className="py-16 sm:py-20 border-b border-slate-200/80">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 
                 {/* Column 1: Before you apply */}
@@ -477,8 +474,8 @@ export default function App() {
           </section>
 
           {/* CTA Section (Ready to strengthen your business?) */}
-          <section id="cta-action-banner" className="bg-slate-900 text-white py-14 sm:py-16 relative overflow-hidden border border-slate-800 my-8 max-w-7xl mx-auto rounded-3xl shadow-2xl">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section id="cta-action-banner" className="bg-slate-900 text-white py-14 sm:py-16 relative overflow-hidden border border-slate-800 my-8 w-full rounded-3xl shadow-2xl">
+            <div className="w-full px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12">
                 
                 {/* CTA Left Info */}

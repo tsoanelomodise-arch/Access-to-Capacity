@@ -95,72 +95,72 @@ export default function Header({ onShowAnnotation, activeView = "capability", on
 
   return (
     <header id="app-header" className="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-2xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 gap-6">
           
           {/* Top-Left Authenticated Session / View Banner Element */}
           {activeView === "admin" ? (
-            <div className="bg-[#1B2337] text-white p-2.5 sm:p-3 rounded-2xl shadow-md border border-slate-800 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
+            <div className="bg-gradient-to-r from-[#e3f2e6]/70 via-[#eef6e8]/70 to-[#faf8e8]/70 text-slate-900 p-2.5 sm:p-3 rounded-2xl shadow-md border border-white/80 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
               <div className="absolute -right-10 -bottom-10 w-28 h-28 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-center gap-3 relative z-10">
-                <div className="w-9 h-9 bg-white text-black rounded-xl flex items-center justify-center font-extrabold text-xs shadow-md border border-slate-200 shrink-0">
-                  <IconInsightsAnalytics className="w-4.5 h-4.5 text-black" />
+                <div className="w-9 h-9 bg-slate-900 text-white rounded-xl flex items-center justify-center font-extrabold text-xs shadow-md border border-slate-800 shrink-0">
+                  <IconInsightsAnalytics className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <span className="text-[9px] text-indigo-400 font-extrabold block uppercase tracking-wider leading-none mb-0.5">EXECUTIVE SESSION OK</span>
-                  <h4 className="font-extrabold text-xs sm:text-sm text-white tracking-tight leading-tight uppercase">OPERATIONAL INSIGHTS</h4>
-                  <span className="text-[10px] text-slate-300 block font-medium leading-none mt-0.5">Consolidated Real-Time Capability Monitoring</span>
+                  <span className="text-[9px] text-slate-600 font-extrabold block uppercase tracking-wider leading-none mb-0.5">EXECUTIVE SESSION OK</span>
+                  <h4 className="font-extrabold text-xs sm:text-sm text-slate-900 tracking-tight leading-tight uppercase">OPERATIONAL INSIGHTS</h4>
+                  <span className="text-[10px] text-slate-600 block font-medium leading-none mt-0.5">Consolidated Real-Time Capability Monitoring</span>
                 </div>
               </div>
-              <div className="hidden md:flex flex-col items-end text-right text-[10px] text-slate-300 space-y-0.5 relative z-10 font-medium shrink-0">
-                <p>System Mode: <span className="text-white font-extrabold">Executive Audit</span></p>
+              <div className="hidden md:flex flex-col items-end text-right text-[10px] text-slate-600 space-y-0.5 relative z-10 font-medium shrink-0">
+                <p>System Mode: <span className="text-slate-900 font-extrabold">Executive Audit</span></p>
                 <p className="flex items-center justify-end gap-1 leading-none mt-0.5">
                   Pipeline Monitor:
-                  <span className="bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 font-extrabold rounded-full px-2 py-0.5 text-[9px] tracking-wide ml-1 uppercase">
+                  <span className="bg-slate-900 text-white border border-slate-800 font-extrabold rounded-full px-2 py-0.5 text-[9px] tracking-wide ml-1 uppercase">
                     ACTIVE AUDIT
                   </span>
                 </p>
               </div>
             </div>
           ) : loggedInUser ? (
-            <div className="bg-[#1B2337] text-white p-2.5 sm:p-3 rounded-2xl shadow-md border border-slate-800 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
+            <div className="bg-gradient-to-r from-[#e3f2e6]/70 via-[#eef6e8]/70 to-[#faf8e8]/70 text-slate-900 p-2.5 sm:p-3 rounded-2xl shadow-md border border-white/80 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
               <div className="absolute -right-10 -bottom-10 w-28 h-28 bg-amber-500/15 rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-center gap-3 relative z-10">
-                <div className="w-9 h-9 bg-amber-500 text-slate-950 rounded-xl flex items-center justify-center font-black text-xs shadow-md shadow-amber-500/25 border border-amber-300/40 shrink-0">
+                <div className="w-9 h-9 bg-slate-900 text-white rounded-xl flex items-center justify-center font-black text-xs shadow-md border border-slate-800 shrink-0">
                   SMME
                 </div>
                 <div>
-                  <span className="text-[9px] text-amber-400 font-extrabold block uppercase tracking-wider leading-none mb-0.5">USER SESSION OK</span>
-                  <h4 className="font-extrabold text-xs sm:text-sm text-white tracking-tight leading-tight">{loggedInUser.companyName}</h4>
-                  <span className="text-[10px] text-slate-300 block font-medium leading-none mt-0.5">Representative: <strong className="text-white">{loggedInUser.ownerName}</strong></span>
+                  <span className="text-[9px] text-slate-600 font-extrabold block uppercase tracking-wider leading-none mb-0.5">USER SESSION OK</span>
+                  <h4 className="font-extrabold text-xs sm:text-sm text-slate-900 tracking-tight leading-tight">{loggedInUser.companyName}</h4>
+                  <span className="text-[10px] text-slate-600 block font-medium leading-none mt-0.5">Representative: <strong className="text-slate-900">{loggedInUser.ownerName}</strong></span>
                 </div>
               </div>
-              <div className="hidden md:flex flex-col items-end text-right text-[10px] text-slate-300 space-y-0.5 relative z-10 font-medium shrink-0">
-                <p>CIPC Reg: <span className="text-white font-extrabold">{loggedInUser.regNumber}</span></p>
+              <div className="hidden md:flex flex-col items-end text-right text-[10px] text-slate-600 space-y-0.5 relative z-10 font-medium shrink-0">
+                <p>CIPC Reg: <span className="text-slate-900 font-extrabold">{loggedInUser.regNumber}</span></p>
                 <p className="flex items-center justify-end gap-1.5 leading-none mt-0.5">
-                  Contact: <span className="text-white font-bold">{loggedInUser.phone}</span>
-                  <span className="bg-white/10 text-white border border-white/20 font-extrabold rounded-full px-2 py-0.5 text-[9px] tracking-wide ml-1">
+                  Contact: <span className="text-slate-900 font-bold">{loggedInUser.phone}</span>
+                  <span className="bg-slate-900 text-white border border-slate-800 font-extrabold rounded-full px-2 py-0.5 text-[9px] tracking-wide ml-1">
                     {loggedInUser.status || "Draft"}
                   </span>
                 </p>
               </div>
             </div>
           ) : loggedInProvider ? (
-            <div className="bg-[#1B2337] text-white p-2.5 sm:p-3 rounded-2xl shadow-md border border-slate-800 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
+            <div className="bg-gradient-to-r from-[#e3f2e6]/70 via-[#eef6e8]/70 to-[#faf8e8]/70 text-slate-900 p-2.5 sm:p-3 rounded-2xl shadow-md border border-white/80 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
               <div className="absolute -right-10 -bottom-10 w-28 h-28 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-center gap-3 relative z-10">
-                <div className="w-9 h-9 bg-emerald-500 text-white rounded-xl flex items-center justify-center font-extrabold text-xs shadow-md shadow-emerald-500/25 border border-emerald-400/30 shrink-0">
+                <div className="w-9 h-9 bg-slate-900 text-white rounded-xl flex items-center justify-center font-extrabold text-xs shadow-md border border-slate-800 shrink-0">
                   {loggedInProvider.logo}
                 </div>
                 <div>
-                  <span className="text-[9px] text-emerald-400 font-extrabold block uppercase tracking-wider leading-none mb-0.5">AUTHENTICATED SESSION OK</span>
-                  <h4 className="font-extrabold text-xs sm:text-sm text-white tracking-tight leading-tight">{loggedInProvider.name}</h4>
-                  <span className="text-[10px] text-slate-300 block font-medium leading-none mt-0.5">Assigned Specialty: <strong className="text-white">{loggedInProvider.specialty}</strong></span>
+                  <span className="text-[9px] text-slate-600 font-extrabold block uppercase tracking-wider leading-none mb-0.5">AUTHENTICATED SESSION OK</span>
+                  <h4 className="font-extrabold text-xs sm:text-sm text-slate-900 tracking-tight leading-tight">{loggedInProvider.name}</h4>
+                  <span className="text-[10px] text-slate-600 block font-medium leading-none mt-0.5">Assigned Specialty: <strong className="text-slate-900">{loggedInProvider.specialty}</strong></span>
                 </div>
               </div>
-              <div className="hidden md:flex flex-col items-end text-right text-[10px] text-slate-300 space-y-0.5 relative z-10 font-medium shrink-0">
-                <p>System Email: <a href={`mailto:${loggedInProvider.email}`} className="text-white underline underline-offset-2">{loggedInProvider.email}</a></p>
-                <p className="flex items-center justify-end gap-1">Matched Category: <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 text-[9px] font-bold rounded-full uppercase tracking-wide inline-block">{loggedInProvider.specialty}</span></p>
+              <div className="hidden md:flex flex-col items-end text-right text-[10px] text-slate-600 space-y-0.5 relative z-10 font-medium shrink-0">
+                <p>System Email: <a href={`mailto:${loggedInProvider.email}`} className="text-slate-900 underline underline-offset-2">{loggedInProvider.email}</a></p>
+                <p className="flex items-center justify-end gap-1">Matched Category: <span className="bg-slate-900 text-white border border-slate-800 px-2 py-0.5 text-[9px] font-bold rounded-full uppercase tracking-wide inline-block">{loggedInProvider.specialty}</span></p>
               </div>
             </div>
           ) : (

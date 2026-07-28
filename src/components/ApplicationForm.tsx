@@ -489,7 +489,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
   };
 
   return (
-    <div className="bg-white/90 backdrop-blur-xl border border-white/80 rounded-[2.25rem] p-6 sm:p-10 shadow-xl shadow-slate-200/50" id="application-form-container">
+    <div className="p-0 sm:p-2" id="application-form-container">
       <AnimatePresence mode="wait">
         {!submitted ? (
           <motion.form
@@ -637,7 +637,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
               <div className="space-y-6 border-b border-slate-200/60 pb-8">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dashed border-slate-200 pb-2">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" />
+                    <Sparkles className="w-4 h-4 text-slate-900 animate-pulse" />
                     <h4 className="font-sans font-black text-xs sm:text-sm tracking-wider text-slate-900 uppercase">
                       3. Enterprise Needs Assessment Questionnaire [SEC_C]
                     </h4>
@@ -645,9 +645,9 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                   <button
                     type="button"
                     onClick={handleAutoFillAssessment}
-                    className="self-start sm:self-auto flex items-center gap-1.5 bg-emerald-100/90 hover:bg-emerald-200/90 text-emerald-900 border border-emerald-300/80 px-4 py-2 rounded-full text-[10px] font-sans font-bold uppercase transition-all shadow-xs active:translate-y-[1px] cursor-pointer"
+                    className="self-start sm:self-auto flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white border border-slate-800 px-4 py-2 rounded-full text-[10px] font-sans font-bold uppercase transition-all shadow-xs active:translate-y-[1px] cursor-pointer"
                   >
-                    <RefreshCw className="w-3 h-3 animate-spin text-emerald-700" style={{ animationDuration: '3s' }} />
+                    <RefreshCw className="w-3 h-3 animate-spin text-slate-300" style={{ animationDuration: '3s' }} />
                     <span>[Auto-Fill Diagnostic]</span>
                   </button>
                 </div>
@@ -672,13 +672,13 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                         className={`py-2 px-4 text-[10px] font-sans font-bold uppercase tracking-wider whitespace-nowrap transition-all focus:outline-hidden cursor-pointer flex items-center gap-1.5 rounded-full ${
                           active
                             ? "bg-slate-900 text-white shadow-md shadow-slate-900/20"
-                            : "bg-white/90 text-slate-700 hover:bg-slate-100 border border-slate-200/80 shadow-2xs"
+                            : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80 shadow-2xs"
                         }`}
                       >
                         <PillarIcon className="w-3.5 h-3.5 shrink-0" />
                         <span>Pillar {idx + 1}</span>
                         {answeredCount > 0 && (
-                          <span className="ml-0.5 px-2 py-0.5 bg-amber-200 text-amber-900 text-[8px] rounded-full font-sans font-extrabold">
+                          <span className="ml-0.5 px-2 py-0.5 bg-slate-900 text-white text-[8px] rounded-full font-sans font-extrabold">
                             {answeredCount}/{total}
                           </span>
                         )}
@@ -715,9 +715,9 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                                 const selected = currentAnswer === opt;
                                 let btnStyle = "border border-slate-200 bg-white text-slate-600 hover:bg-slate-100";
                                 if (selected) {
-                                  if (opt === "yes") btnStyle = "bg-emerald-600 text-white font-extrabold shadow-sm shadow-emerald-200 border-emerald-600";
-                                  else if (opt === "no") btnStyle = "bg-rose-600 text-white font-extrabold shadow-sm shadow-rose-200 border-rose-600";
-                                  else btnStyle = "bg-amber-500 text-slate-950 font-extrabold shadow-sm shadow-amber-200 border-amber-500";
+                                  if (opt === "yes") btnStyle = "bg-slate-900 text-white font-extrabold shadow-sm border-slate-900";
+                                  else if (opt === "no") btnStyle = "bg-slate-800 text-white font-extrabold shadow-sm border-slate-800";
+                                  else btnStyle = "bg-slate-200 text-slate-900 font-extrabold shadow-sm border-slate-300";
                                 }
                                 return (
                                   <button
@@ -768,27 +768,24 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
                   {/* Right: Live Recommendation Engine Box */}
                   <div className="lg:col-span-5 bg-slate-900/95 backdrop-blur-xl text-white rounded-[1.75rem] p-5 sm:p-6 shadow-xl shadow-slate-900/20 border border-slate-800 space-y-4">
-                    <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                    <div className="hidden items-center justify-between border-b border-slate-800 pb-2">
                       <div className="flex items-center gap-1.5">
-                        <Compass className="w-4 h-4 text-emerald-400 animate-spin" style={{ animationDuration: '6s' }} />
-                        <span className="font-sans text-[10px] font-black text-emerald-400 tracking-wider uppercase hidden">RECOMMENDATION_ENGINE_V1</span>
+                        <Compass className="w-4 h-4 text-white animate-spin" style={{ animationDuration: '6s' }} />
+                        <span className="font-sans text-[10px] font-black text-white tracking-wider uppercase hidden">RECOMMENDATION_ENGINE_V1</span>
                       </div>
-                      <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[8px] font-sans px-2.5 py-1 rounded-full uppercase font-extrabold tracking-widest animate-pulse">
-                        [LIVE_ANALYZING]
-                      </span>
                     </div>
 
                     {/* Stats Summary */}
                     <div className="grid grid-cols-2 gap-3">
                       <div className="bg-slate-800/60 p-3 rounded-2xl border border-slate-700/60 shadow-inner">
-                        <span className="text-[8px] font-sans font-bold text-slate-400 block uppercase tracking-wider">GAPS_DETECTED</span>
-                        <span className="text-sm sm:text-base font-sans font-black text-rose-400 tracking-tight">
+                        <span className="hidden text-[8px] font-sans font-bold text-slate-400 uppercase tracking-wider">GAPS_DETECTED</span>
+                        <span className="text-sm sm:text-base font-sans font-black text-slate-200 tracking-tight">
                           {getInterventionsReport().reduce((acc, curr) => acc + curr.gapsCount, 0)} Gaps
                         </span>
                       </div>
                       <div className="bg-slate-800/60 p-3 rounded-2xl border border-slate-700/60 shadow-inner">
-                        <span className="text-[8px] font-sans font-bold text-slate-400 block uppercase tracking-wider">SUPPORT_RECOM_QTY</span>
-                        <span className="text-sm sm:text-base font-sans font-black text-emerald-400 tracking-tight">
+                        <span className="hidden text-[8px] font-sans font-bold text-slate-400 uppercase tracking-wider">SUPPORT_RECOM_QTY</span>
+                        <span className="text-sm sm:text-base font-sans font-black text-white tracking-tight">
                           {getInterventionsReport().length} Programs
                         </span>
                       </div>
@@ -808,10 +805,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                           {getInterventionsReport().map((rep) => (
                             <div key={rep.pillarId} className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-3 space-y-1">
                               <div className="flex justify-between items-center">
-                                <span className="text-[9px] font-sans font-black text-amber-300 truncate max-w-[150px]">
+                                <span className="text-[9px] font-sans font-black text-slate-200 truncate max-w-[150px]">
                                   {rep.pillarTitle.substring(3)}
                                 </span>
-                                <span className="text-[8px] font-sans bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30 uppercase font-black tracking-wider">
+                                <span className="text-[8px] font-sans bg-white/10 text-white px-2 py-0.5 rounded-full border border-white/20 uppercase font-black tracking-wider">
                                   {rep.intervention}
                                 </span>
                               </div>
@@ -844,7 +841,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                     ) : (
                       formData.selectedServices.map(service => (
                         <span key={service} className="bg-slate-900 text-white text-[9px] px-3 py-1.5 font-bold uppercase tracking-wider flex items-center gap-1.5 rounded-full shadow-xs">
-                          <Check className="w-2.5 h-2.5 text-emerald-400" />
+                          <Check className="w-2.5 h-2.5 text-white" />
                           {service}
                         </span>
                       ))
@@ -929,7 +926,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                   className={`relative border-2 border-dashed rounded-[2.25rem] p-8 sm:p-10 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-3.5 overflow-hidden shadow-xl shadow-slate-200/60 backdrop-blur-md ${
                     isDragging
                       ? "border-slate-900 bg-slate-100/90 scale-[1.01]"
-                      : "border-slate-300/80 hover:border-slate-900 bg-gradient-to-br from-[#f6f6f4] via-[#efefeb] to-[#f8f8f6] hover:from-[#f0f0ec] hover:to-[#f2f2ee]"
+                      : "border-slate-300/80 hover:border-slate-900 bg-gradient-to-b from-[#dce3e6] via-[#d1dedb] to-[#bfe0d8] hover:brightness-95"
                   }`}
                   id="drag-drop-zone"
                 >
@@ -943,9 +940,6 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
                   {/* Top-right pill badges matching design reference */}
                   <div className="absolute top-3 right-4 flex items-center gap-1.5 z-10 pointer-events-none">
-                    <span className="bg-white/90 text-slate-800 text-[10px] font-black px-2.5 py-1 rounded-full shadow-xs border border-white/80">
-                      82%
-                    </span>
                     <span className="w-6 h-6 bg-white/90 text-slate-800 text-xs font-bold rounded-full flex items-center justify-center shadow-xs border border-white/80">
                       +
                     </span>
@@ -984,7 +978,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                         <button
                           type="button"
                           onClick={() => handleRemoveFile(index)}
-                          className="text-slate-400 hover:text-rose-600 p-1 rounded-full focus:outline-hidden cursor-pointer transition-colors"
+                          className="text-slate-400 hover:text-slate-900 p-1 rounded-full focus:outline-hidden cursor-pointer transition-colors"
                           title="Remove file"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -1004,7 +998,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                   type="button"
                   onClick={handleSaveDraft}
                   disabled={submitting}
-                  className="w-full sm:w-auto bg-amber-100/90 hover:bg-amber-200/90 disabled:bg-slate-200 text-amber-900 border border-amber-300/80 font-sans text-xs font-bold tracking-wider px-6 py-3.5 rounded-full shadow-xs hover:shadow-md active:translate-y-[1px] transition-all flex items-center justify-center gap-2 cursor-pointer focus:outline-hidden uppercase"
+                  className="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 disabled:bg-slate-200 text-slate-900 border border-slate-300/80 font-sans text-xs font-bold tracking-wider px-6 py-3.5 rounded-full shadow-xs hover:shadow-md active:translate-y-[1px] transition-all flex items-center justify-center gap-2 cursor-pointer focus:outline-hidden uppercase"
                   id="save-draft-btn"
                 >
                   <span>{fmtText("[SAVE_DRAFT_ASSESSMENT]", showAnnotations)}</span>
@@ -1039,28 +1033,28 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
             id="app-success-view-draft"
           >
             {/* Header card with draft state */}
-            <div className="bg-amber-100/80 text-amber-950 p-6 sm:p-8 rounded-[2rem] border border-amber-200/80 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs">
+            <div className="bg-slate-900 text-white p-6 sm:p-8 rounded-[2rem] border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl shadow-slate-900/20">
               <div className="space-y-2">
-                <span className="font-sans text-[9px] font-black text-amber-900/70 tracking-widest uppercase block">
+                <span className="font-sans text-[9px] font-black text-slate-400 tracking-widest uppercase block">
                   [DRAFT_ASSESSMENT_SAVED_OK]
                 </span>
-                <h3 className="font-sans font-black text-2xl sm:text-3xl text-slate-900 tracking-tight uppercase leading-none">
+                <h3 className="font-sans font-black text-2xl sm:text-3xl text-white tracking-tight uppercase leading-none">
                   Draft Needs Assessment Saved!
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-700 font-sans max-w-xl leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-slate-300 font-sans max-w-xl leading-relaxed font-medium">
                   Your 7-pillar Needs Assessment and company details have been saved as a working draft. You have <strong>not submitted</strong> this assessment yet.
                 </p>
               </div>
-              <div className="flex-shrink-0 bg-slate-900 text-white rounded-2xl p-4 font-sans space-y-1 text-center min-w-[150px] shadow-sm">
-                <span className="text-[9px] text-slate-400 block uppercase font-bold tracking-wider">DRAFT_ID</span>
-                <span className="text-sm font-black tracking-wider text-amber-300">{draftTrackingCode}</span>
-                <span className="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase block mt-1 tracking-widest">
+              <div className="flex-shrink-0 bg-white text-slate-900 rounded-2xl p-4 font-sans space-y-1 text-center min-w-[150px] shadow-sm">
+                <span className="text-[9px] text-slate-500 block uppercase font-bold tracking-wider">DRAFT_ID</span>
+                <span className="text-sm font-black tracking-wider text-slate-900">{draftTrackingCode}</span>
+                <span className="bg-slate-100 text-slate-900 border border-slate-200 text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase block mt-1 tracking-widest">
                   UNSUBMITTED_DRAFT
                 </span>
               </div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-[2rem] p-6 space-y-4 shadow-sm">
+            <div className="bg-white border border-slate-200/80 rounded-[2rem] p-6 space-y-4 shadow-sm">
               <h4 className="font-sans font-black text-sm sm:text-base text-slate-900 uppercase">What are the next steps?</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-sans text-slate-700 leading-relaxed">
                 <div className="bg-slate-50/80 p-4 border border-slate-200/80 rounded-2xl">
@@ -1103,7 +1097,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
               {/* Header card with success state */}
               <div className="bg-slate-900/95 backdrop-blur-xl text-white p-6 sm:p-8 rounded-[2rem] border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl shadow-slate-900/20">
                 <div className="space-y-2">
-                  <span className="font-sans text-[9px] font-bold text-amber-300 tracking-widest uppercase block">
+                  <span className="font-sans text-[9px] font-bold text-slate-400 tracking-widest uppercase block">
                     [DIAGNOSTIC_ASSESSMENT_REPORT_V1]
                   </span>
                   <h3 className="font-sans font-black text-2xl sm:text-3xl text-white tracking-tight uppercase leading-none">
@@ -1116,7 +1110,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                 <div className="flex-shrink-0 bg-white text-slate-900 rounded-2xl border border-slate-200 p-4 font-sans space-y-1 text-center min-w-[150px] shadow-sm">
                   <span className="text-[9px] text-slate-500 block uppercase font-bold tracking-wider">TRACKING_CODE</span>
                   <span className="text-sm font-black tracking-wider">SPA-2026-X8B</span>
-                  <span className="bg-emerald-100 text-emerald-800 text-[8px] font-black px-2 py-0.5 rounded-full uppercase block mt-1 tracking-widest">
+                  <span className="bg-slate-900 text-white text-[8px] font-black px-2 py-0.5 rounded-full uppercase block mt-1 tracking-widest">
                     PRE-APPROVED
                   </span>
                 </div>
@@ -1189,7 +1183,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
                           <div className="pt-2 border-t border-dashed border-slate-200 flex justify-between items-center text-[11px] font-sans text-slate-600">
                             <span>Diagnostic Score: {rep.totalQuestions - rep.gapsCount} / {rep.totalQuestions} Passed</span>
-                            <span className="font-sans text-[9px] text-emerald-800 bg-emerald-100/90 px-2.5 py-1 rounded-full border border-emerald-200 font-extrabold uppercase tracking-wider">[INTERVENTION_APPROVED]</span>
+                            <span className="font-sans text-[9px] text-slate-900 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200 font-extrabold uppercase tracking-wider">[INTERVENTION_APPROVED]</span>
                           </div>
                         </div>
                       ))}
@@ -1232,7 +1226,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                           <div className="space-y-1 text-[11px] text-slate-700 bg-slate-50/80 p-3 rounded-xl border border-slate-200/80">
                             <div className="flex justify-between">
                               <span className="text-slate-500 font-medium">Allocation Status:</span>
-                              <span className="text-emerald-700 font-extrabold uppercase">Pre-Assigned</span>
+                              <span className="text-slate-900 font-extrabold uppercase">Pre-Assigned</span>
                             </div>
                             <div className="flex justify-between">
                               <span className="text-slate-500 font-medium">Intervention Service:</span>
@@ -1259,7 +1253,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                     })}
 
                     {/* Next Steps card */}
-                    <div className="bg-amber-50/90 border border-amber-200/90 rounded-2xl p-4 sm:p-5 space-y-3 shadow-xs">
+                    <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 sm:p-5 space-y-3 shadow-xs">
                       <div className="flex items-center gap-1.5 text-slate-900">
                         <Award className="w-4 h-4 text-slate-900" />
                         <span className="font-sans text-[10px] font-black uppercase tracking-wider">Approved Workflow Progression</span>
@@ -1322,7 +1316,7 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
               className="text-center py-10 px-4 space-y-6"
               id="app-success-view"
             >
-              <div className="w-20 h-20 border border-emerald-200 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-emerald-700 shadow-xs">
+              <div className="w-20 h-20 border border-slate-800 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto text-white shadow-lg">
                 <CheckCircle2 className="w-10 h-10 stroke-[2]" />
               </div>
 

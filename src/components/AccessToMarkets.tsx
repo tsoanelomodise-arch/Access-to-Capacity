@@ -198,7 +198,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
       
       {/* Hero Section */}
       <section className="relative pt-10 pb-16 sm:pb-20 lg:pt-14 lg:pb-24 border-b border-slate-200/80 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           {/* Breadcrumb Row */}
           <nav className="flex mb-6 text-[10px] sm:text-xs font-mono font-bold tracking-widest text-slate-500 uppercase" aria-label="Breadcrumb">
@@ -292,14 +292,14 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
 
       {/* Pillars Section */}
       <section className="py-20 bg-white border-b border-slate-200/80" id="markets-definition">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="text-center w-full mb-16 space-y-4">
             {showAnnotations && <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest block">[M_1.03: PROGRAM_PURPOSE]</span>}
             <h2 className="font-mono font-extrabold text-2xl sm:text-3xl text-slate-900 uppercase">
               What is Access to Markets?
             </h2>
             <div className="w-12 h-0.5 bg-slate-900 mx-auto" />
-            <p className="text-xs sm:text-sm text-slate-600 font-sans leading-relaxed pt-2">
+            <p className="text-xs sm:text-sm text-slate-600 font-sans leading-relaxed pt-2 max-w-4xl mx-auto">
               Access to Markets enables enterprises to move beyond readiness and into active opportunity. The platform connects verified businesses with buyers looking for capable, compliant suppliers, helping enterprises access procurement opportunities, grow revenues and participate in local and international markets.
             </p>
           </div>
@@ -325,7 +325,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
 
       {/* Market Opportunities Available */}
       <section className="py-20 bg-slate-100/50 border-b border-slate-200/80" id="markets-opportunities">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16 space-y-2">
             <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest flex items-center justify-center gap-1">
@@ -400,7 +400,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
 
       {/* How it works (Process Flow Diagram) */}
       <section className="py-20 bg-white border-b border-slate-200/80" id="markets-how-it-works">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16 space-y-2">
             <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest flex items-center justify-center gap-1">
@@ -473,7 +473,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
 
       {/* Why apply? Minimalist grid */}
       <section className="py-16 bg-white border-b border-slate-200/80" id="markets-why-apply">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-12 space-y-2">
             {showAnnotations && <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest block">[M_1.06: BENEFITS_ACCENTS]</span>}
@@ -483,7 +483,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
             <div className="w-12 h-0.5 bg-slate-900 mx-auto" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center w-full">
             {benefits.map((b, idx) => {
               const BenefitIcon = b.icon;
               return (
@@ -504,7 +504,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
 
       {/* Video & Eligibility Checklist */}
       <section className="py-20 bg-slate-100/50 border-b border-slate-200/80" id="markets-eligibility">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left: Video Placeholder */}
@@ -575,7 +575,7 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
 
       {/* FAQ Accordion Section */}
       <section className="py-20 bg-white border-b border-slate-200/80" id="markets-faq">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-12 space-y-2">
             <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest flex items-center justify-center gap-1">
@@ -642,8 +642,8 @@ export default function AccessToMarkets({ renderSpecBadge, scrollToApply, showAn
       </section>
 
       {/* Final CTA Strip */}
-      <section className="bg-slate-950 text-white py-12 border-b border-slate-900 my-8 max-w-7xl mx-auto rounded-3xl shadow-xl">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-slate-950 text-white py-12 border-b border-slate-900 my-8 w-full rounded-3xl shadow-xl">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             
             <div className="flex items-center gap-6">
