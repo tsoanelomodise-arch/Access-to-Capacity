@@ -12,7 +12,9 @@ import {
   IconArrowUpRight as ArrowUpRight, 
   IconCheck as Check, 
   IconSparkles as Sparkles, 
-  IconHelpCircle as HelpCircle 
+  IconHelpCircle as HelpCircle,
+  IconIntakeDossier as IntakeDossier,
+  IconShieldCheck as ShieldCheck
 } from "./components/icons/CustomIcons";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -144,25 +146,31 @@ export default function App() {
             </nav>
 
             {/* Standalone Page Header Card */}
-            <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-4 text-left relative overflow-hidden">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
-                <div>
-                  {showAnnotations && (
-                    <span className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest block mb-1">
-                      SERVICE PROVIDER AUTHENTICATION INTAKE PORTAL
-                    </span>
-                  )}
-                  <h1 className="font-mono font-extrabold text-2xl sm:text-3xl tracking-tight text-white uppercase">
-                    Application Intake Dossier
-                  </h1>
+            <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-4 text-left relative overflow-hidden border border-slate-800">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-6">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-amber-400 shrink-0 shadow-inner">
+                    <IntakeDossier className="w-6 h-6" />
+                  </div>
+                  <div>
+                    {showAnnotations && (
+                      <span className="text-[10px] font-sans font-bold text-amber-400 uppercase tracking-widest block mb-1">
+                        SERVICE PROVIDER AUTHENTICATION INTAKE PORTAL
+                      </span>
+                    )}
+                    <h1 className="font-sans font-black text-3xl sm:text-4xl tracking-tight text-white uppercase leading-none">
+                      Application Intake Dossier
+                    </h1>
+                  </div>
                 </div>
-                {showAnnotations && (
-                  <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider self-start sm:self-auto">
-                    SYSTEM_INTAKE_ACTIVE
-                  </span>
-                )}
+                <div className="flex items-center gap-2 self-start sm:self-auto">
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>VERIFIED_INTAKE</span>
+                  </div>
+                </div>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-300/70 font-sans font-normal leading-relaxed max-w-2xl">
                 Complete the official registration and verification dossier below to enrol your SMME into the Service Provider Authentication developmental programs. All submissions undergo live CIPC and SARS compliance verification.
               </p>
             </div>

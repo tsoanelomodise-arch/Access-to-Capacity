@@ -26,18 +26,32 @@ import {
   IconAward as Award,
   IconArrowRight as ArrowRight,
   IconHelpCircle as Info,
-  IconTarget as Compass
+  IconTarget as Compass,
+  IconIntakeDossier as IntakeDossier,
+  IconBarcodeScan as BarcodeScan,
+  IconFingerprint as Fingerprint,
+  IconPrinter as Printer,
+  IconPenTool as PenTool,
+  IconPillarStrategy,
+  IconPillarPlanning,
+  IconPillarTechnical,
+  IconPillarSkills,
+  IconPillarEcosystem,
+  IconPillarLeadership,
+  IconPillarTech,
+  IconLayers
 } from "./icons/CustomIcons";
 import { motion, AnimatePresence } from "motion/react";
 import { fmtText } from "../utils/format";
 
-// The 7-pillar Needs Assessment Questionnaire structure
+// The 7-pillar Needs Assessment Questionnaire structure with bespoke iconography
 const pillarsData = [
   {
     id: "strategy",
     title: "1. Strategy, Compliance & Governance",
     recommendation: "Business Advisory",
     description: "Evaluates operational health, cashflow management, tax compliance, and HR structures.",
+    icon: IconPillarStrategy,
     questions: [
       { id: "q1_1", text: "Has your business undergone a formal diagnostic to evaluate its current operational health and strategy?", recommendOn: "no" },
       { id: "q1_2", text: "Do you have formalized cashflow management and financial management structures in place?", recommendOn: "no" },
@@ -50,6 +64,7 @@ const pillarsData = [
     title: "2. Investment Readiness & Planning",
     recommendation: "Business Planning",
     description: "Assesses business plan completeness, 3-5 year financial modeling, and investor pitch readiness.",
+    icon: IconPillarPlanning,
     questions: [
       { id: "q2_1", text: "Do you have a comprehensive, up-to-date business plan supported by current market research?", recommendOn: "no" },
       { id: "q2_2", text: "Do you have an active financial model that projects your revenue and expenses for the next 3-5 years?", recommendOn: "no" },
@@ -62,6 +77,7 @@ const pillarsData = [
     title: "3. Product & Quality Assurance",
     recommendation: "Technical Assistance",
     description: "Determines product development needs, testing requirements, quality certifications, and intellectual property.",
+    icon: IconPillarTechnical,
     questions: [
       { id: "q3_1", text: "Does your core product require further development, prototype testing, or formal certification?", recommendOn: "yes" },
       { id: "q3_2", text: "Do you lack formal quality assurance certifications required by your industry (e.g., ISO, HAACP)?", recommendOn: "yes" },
@@ -74,6 +90,7 @@ const pillarsData = [
     title: "4. Team Capacity & Training",
     recommendation: "Skills Development",
     description: "Identifies skill requirements in entrepreneurship, export readiness, AI/digital literacy, and project management.",
+    icon: IconPillarSkills,
     questions: [
       { id: "q4_1", text: "Do you or your staff require training in foundational entrepreneurship or financial literacy?", recommendOn: "yes" },
       { id: "q4_2", text: "Are you looking to expand internationally but lack \"Export Readiness\" training?", recommendOn: "yes" },
@@ -86,6 +103,7 @@ const pillarsData = [
     title: "5. Ecosystem & Workspace Needs",
     recommendation: "Mentorship & Incubation",
     description: "Analyzes requirements for physical/virtual accelerator spaces, hubs, and technical incubator environments.",
+    icon: IconPillarEcosystem,
     questions: [
       { id: "q5_1", text: "Would your business benefit from joining an accelerator programme or innovation hub?", recommendOn: "yes" },
       { id: "q5_2", text: "Do you require access to physical incubation spaces (e.g., office space, shared manufacturing facilities)?", recommendOn: "yes" },
@@ -97,6 +115,7 @@ const pillarsData = [
     title: "6. Leadership & Guidance",
     recommendation: "Mentorship & Incubation",
     description: "Covers industry-specific mentor allocations, business coaching, and peer learning ecosystems.",
+    icon: IconPillarLeadership,
     questions: [
       { id: "q6_1", text: "Would you benefit from being allocated an industry-specific mentor to guide your growth?", recommendOn: "yes" },
       { id: "q6_2", text: "Do the founders or directors require executive or business coaching?", recommendOn: "yes" },
@@ -108,6 +127,7 @@ const pillarsData = [
     title: "7. Technological Infrastructure",
     recommendation: "Digital Enablement",
     description: "Measures functional web/e-commerce onboarding, POS tracking, digital accounting, and ERP setups.",
+    icon: IconPillarTech,
     questions: [
       { id: "q7_1", text: "Does your business have a fully functional website and an e-commerce onboarding strategy?", recommendOn: "no" },
       { id: "q7_2", text: "Are you currently utilizing formal digital marketing strategies to reach customers?", recommendOn: "no" },
@@ -505,7 +525,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">COMPANY_NAME</label>
+                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                    <Building className="w-3 h-3 text-slate-500" />
+                    <span>COMPANY_NAME</span>
+                  </label>
                   <input
                     type="text"
                     name="companyName"
@@ -518,7 +541,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">CIPC_REG_NUMBER</label>
+                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                    <BarcodeScan className="w-3 h-3 text-slate-500" />
+                    <span>CIPC_REG_NUMBER</span>
+                  </label>
                   <input
                     type="text"
                     name="regNumber"
@@ -531,7 +557,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                 </div>
 
                 <div className="space-y-1.5 sm:col-span-2">
-                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">INDUSTRY_SECTOR</label>
+                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                    <IconLayers className="w-3 h-3 text-slate-500" />
+                    <span>INDUSTRY_SECTOR</span>
+                  </label>
                   <select
                     name="industry"
                     value={formData.industry}
@@ -560,7 +589,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">REPRESENTATIVE_FULL_NAME</label>
+                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                    <User className="w-3 h-3 text-slate-500" />
+                    <span>REPRESENTATIVE_FULL_NAME</span>
+                  </label>
                   <input
                     type="text"
                     name="ownerName"
@@ -573,7 +605,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">EMAIL_ADDRESS</label>
+                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                    <Mail className="w-3 h-3 text-slate-500" />
+                    <span>EMAIL_ADDRESS</span>
+                  </label>
                   <input
                     type="email"
                     name="email"
@@ -586,7 +621,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                 </div>
 
                 <div className="space-y-1.5 sm:col-span-2">
-                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">CONTACT_MOBILE_NUMBER</label>
+                  <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                    <Phone className="w-3 h-3 text-slate-500" />
+                    <span>CONTACT_MOBILE_NUMBER</span>
+                  </label>
                   <input
                     type="tel"
                     name="phone"
@@ -624,10 +662,11 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                   Answer the following questions across seven key pillars to help the <strong>Capability Recommendation Engine</strong> automatically identify operational bottlenecks and assign fully-subsidized interventions.
                 </p>
 
-                {/* 7-Pillar Tabs Navigation */}
+                {/* 7-Pillar Tabs Navigation with Bespoke Icons */}
                 <div className="flex overflow-x-auto gap-1 pb-2 border-b border-slate-200 -mx-4 px-4 sm:mx-0 sm:px-0">
                   {pillarsData.map((pillar, idx) => {
                     const active = activePillarIdx === idx;
+                    const PillarIcon = pillar.icon;
                     // Count answered questions in this pillar
                     const answeredCount = pillar.questions.filter(q => responses[q.id] !== undefined).length;
                     const total = pillar.questions.length;
@@ -636,15 +675,16 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                         type="button"
                         key={pillar.id}
                         onClick={() => setActivePillarIdx(idx)}
-                        className={`py-2 px-3 text-[10px] font-mono font-bold border-2 border-b-0 whitespace-nowrap transition-all focus:outline-hidden cursor-pointer ${
+                        className={`py-2 px-3 text-[10px] font-mono font-bold border-2 border-b-0 whitespace-nowrap transition-all focus:outline-hidden cursor-pointer flex items-center gap-1.5 ${
                           active
                             ? "bg-slate-900 border-slate-900 text-white translate-y-[2px]"
                             : "bg-slate-100 border-slate-300 hover:bg-slate-200 text-slate-700"
                         }`}
                       >
-                        Pillar {idx + 1}
+                        <PillarIcon className="w-3.5 h-3.5 shrink-0" />
+                        <span>Pillar {idx + 1}</span>
                         {answeredCount > 0 && (
-                          <span className="ml-1 px-1 bg-amber-400 text-slate-900 text-[8px] rounded-xs font-sans">
+                          <span className="ml-0.5 px-1 bg-amber-400 text-slate-900 text-[8px] rounded-xs font-sans font-bold">
                             {answeredCount}/{total}
                           </span>
                         )}
@@ -868,7 +908,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
               {/* Motivation */}
               <div className="space-y-1.5">
-                <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">SUPPORTING_MOTIVATION_PARAGRAPH</label>
+                <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                  <PenTool className="w-3 h-3 text-slate-500" />
+                  <span>SUPPORTING_MOTIVATION_PARAGRAPH</span>
+                </label>
                 <textarea
                   name="motivation"
                   rows={4}
@@ -881,7 +924,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
 
               {/* Drag & Drop Upload Zone */}
               <div className="space-y-3">
-                <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide block">SUPPORTING_DOCUMENTS</label>
+                <label className="text-[10px] font-mono font-bold text-slate-800 tracking-wide flex items-center gap-1.5">
+                  <UploadCloud className="w-3 h-3 text-slate-500" />
+                  <span>SUPPORTING_DOCUMENTS</span>
+                </label>
                 
                 <div
                   onDragOver={handleDragOver}
@@ -1227,9 +1273,10 @@ export default function ApplicationForm({ track = "capability", showAnnotations 
                     onClick={() => {
                       window.print();
                     }}
-                    className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-mono text-xs font-bold tracking-wider px-6 py-3 border-2 border-slate-900 wire-shadow active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
+                    className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-mono text-xs font-bold tracking-wider px-6 py-3 border-2 border-slate-900 wire-shadow active:translate-x-[1px] active:translate-y-[1px] cursor-pointer flex items-center justify-center gap-2"
                   >
-                    [PRINT_DIAGNOSTIC_REPORT]
+                    <Printer className="w-4 h-4" />
+                    <span>[PRINT_DIAGNOSTIC_REPORT]</span>
                   </button>
                   <button
                     type="button"

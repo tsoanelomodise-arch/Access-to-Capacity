@@ -103,8 +103,8 @@ export default function Header({ onShowAnnotation, activeView = "capability", on
             <div className="bg-[#1B2337] text-white p-2.5 sm:p-3 rounded-2xl shadow-md border border-slate-800 flex items-center justify-between gap-3 sm:gap-5 text-left relative overflow-hidden backdrop-blur-2xl">
               <div className="absolute -right-10 -bottom-10 w-28 h-28 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none" />
               <div className="flex items-center gap-3 relative z-10">
-                <div className="w-9 h-9 bg-indigo-600 text-white rounded-xl flex items-center justify-center font-extrabold text-xs shadow-md shadow-indigo-600/25 border border-indigo-400/30 shrink-0">
-                  <IconInsightsAnalytics className="w-4.5 h-4.5 text-white" />
+                <div className="w-9 h-9 bg-white text-black rounded-xl flex items-center justify-center font-extrabold text-xs shadow-md border border-slate-200 shrink-0">
+                  <IconInsightsAnalytics className="w-4.5 h-4.5 text-black" />
                 </div>
                 <div>
                   <span className="text-[9px] text-indigo-400 font-extrabold block uppercase tracking-wider leading-none mb-0.5">EXECUTIVE SESSION OK</span>

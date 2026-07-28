@@ -126,7 +126,7 @@ export default function Footer({ showAnnotations = true, activeView = "capabilit
               </div>
             </a>
             
-            <p className="text-xs text-slate-400 font-mono leading-relaxed max-w-sm" id="footer-tagline">
+            <p className="text-xs text-transparent select-none font-mono leading-relaxed max-w-sm" id="footer-tagline">
               Mobilising capital. Building enterprises. Supporting SMME growth.
             </p>
 
@@ -160,7 +160,7 @@ export default function Footer({ showAnnotations = true, activeView = "capabilit
           <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-2 gap-6">
             {footerLinks.map((group) => (
               <div key={group.title} className="space-y-4" id={`footer-col-${group.title.toLowerCase().replace(/\s+/g, "-")}`}>
-                <h4 className="font-mono font-bold text-[10px] tracking-widest text-white uppercase bg-slate-900/80 inline-block px-2.5 py-1 rounded-md border border-slate-800">
+                <h4 className="font-mono font-bold text-[10px] tracking-widest text-transparent select-none uppercase bg-transparent inline-block px-2.5 py-1 rounded-md border border-transparent">
                   {group.title}
                 </h4>
                 <ul className="space-y-2.5 text-[11px] font-mono">
@@ -176,8 +176,8 @@ export default function Footer({ showAnnotations = true, activeView = "capabilit
                         <a
                           href="#"
                           onClick={(e) => handleLinkClick(e, link)}
-                          className={`text-slate-400 hover:text-white hover:underline transition-colors ${
-                            isActive ? "text-white font-bold underline" : ""
+                          className={`text-transparent hover:text-transparent transition-colors select-none ${
+                            isActive ? "text-transparent font-bold" : ""
                           }`}
                         >
                           {link}
@@ -238,7 +238,7 @@ export default function Footer({ showAnnotations = true, activeView = "capabilit
         {/* Bottom copyright and legal info */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[11px] text-slate-500 font-mono gap-4" id="footer-bottom-info">
           <div>
-            © 2026 Service Provider Authentication Portal. Wireframe Prototype V1.0.
+            © 2026 Service Provider Authentication Portal. Wonderland Studio V1.0.
           </div>
           <div className="flex gap-4 sm:gap-6 divide-x divide-slate-800">
             <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>

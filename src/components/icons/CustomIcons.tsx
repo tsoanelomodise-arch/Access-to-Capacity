@@ -17,6 +17,7 @@ const BaseIcon: React.FC<IconProps & { children: React.ReactNode }> = ({
   className = "",
   strokeWidth = 1.75,
   children,
+  style,
   ...props
 }) => (
   <svg
@@ -24,11 +25,13 @@ const BaseIcon: React.FC<IconProps & { children: React.ReactNode }> = ({
     height={size}
     viewBox="0 0 24 24"
     fill="none"
-    stroke="currentColor"
+    stroke="black"
+    color="black"
     strokeWidth={strokeWidth}
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={`shrink-0 inline-block align-middle transition-colors ${className}`}
+    style={{ color: "#000000", stroke: "#000000", ...style }}
+    className={`shrink-0 inline-block align-middle transition-colors text-black ${className}`}
     {...props}
   >
     {children}
@@ -641,6 +644,130 @@ export const IconCompassRadar: React.FC<IconProps> = (props) => (
   </BaseIcon>
 );
 
+// Bespoke Icons for Application Intake Dossier System
+export const IconIntakeDossier: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" />
+    <line x1="8" y1="13" x2="16" y2="13" />
+    <line x1="8" y1="17" x2="13" y2="17" />
+    <path d="M16 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="currentColor" opacity="0.15" />
+    <path d="m14.5 16 1 1 2.5-2.5" />
+  </BaseIcon>
+);
+
+export const IconBarcodeScan: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+    <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+    <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+    <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+    <line x1="7" y1="8" x2="7" y2="16" />
+    <line x1="10" y1="8" x2="10" y2="16" />
+    <line x1="13" y1="8" x2="13" y2="16" />
+    <line x1="17" y1="8" x2="17" y2="16" />
+  </BaseIcon>
+);
+
+export const IconFingerprint: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" />
+    <path d="M14 13.12c0 2.38-.2 4.09-.4 4.88" />
+    <path d="M12 6a6 6 0 0 0-6 6c0 2.02.13 4.29.35 6.1" />
+    <path d="M18 12a6 6 0 0 0-1.8-4.24" />
+    <path d="M12 2a10 10 0 0 0-10 10c0 2.82.26 5.89.65 8" />
+    <path d="M22 12A10 10 0 0 0 14 2.3" />
+  </BaseIcon>
+);
+
+export const IconPrinter: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <polyline points="6 9 6 2 18 2 18 9" />
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+    <rect x="6" y="14" width="12" height="8" />
+  </BaseIcon>
+);
+
+export const IconPenTool: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="m12 19 7-7 3 3-7 7-3-3z" />
+    <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+    <circle cx="11" cy="11" r="2" />
+  </BaseIcon>
+);
+
+export const IconPillarStrategy: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M3 9h18" />
+    <path d="M9 21V9" />
+    <circle cx="6" cy="6" r="1" fill="currentColor" />
+    <path d="M13 13h4" />
+    <path d="M13 17h4" />
+  </BaseIcon>
+);
+
+export const IconPillarPlanning: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="M3 3v18h18" />
+    <path d="m19 9-5 5-4-4-3 3" />
+    <polyline points="14 9 19 9 19 14" />
+  </BaseIcon>
+);
+
+export const IconPillarTechnical: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="m9 12 2 2 4-4" />
+    <path d="M12 3v3" />
+    <path d="M12 18v3" />
+    <path d="M3 12h3" />
+    <path d="M18 12h3" />
+  </BaseIcon>
+);
+
+export const IconPillarSkills: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+    <polyline points="12 15 16 11 20 15" />
+  </BaseIcon>
+);
+
+export const IconPillarEcosystem: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v4" />
+    <path d="M12 18v4" />
+    <path d="M4.93 4.93l2.83 2.83" />
+    <path d="M16.24 16.24l2.83 2.83" />
+    <path d="M2 12h4" />
+    <path d="M18 12h4" />
+    <path d="M4.93 19.07l2.83-2.83" />
+    <path d="M16.24 7.76l2.83-2.83" />
+  </BaseIcon>
+);
+
+export const IconPillarLeadership: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <polygon points="19 8 21 12 17 12" />
+    <line x1="19" y1="12" x2="19" y2="18" />
+  </BaseIcon>
+);
+
+export const IconPillarTech: React.FC<IconProps> = (props) => (
+  <BaseIcon {...props}>
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="17" x2="12" y2="21" />
+    <path d="M17 9h.01" />
+    <path d="M7 9h.01" />
+    <path d="M12 9h.01" />
+  </BaseIcon>
+);
+
 // Map of named icons for dynamic resolution
 export const ICON_NAME_MAP: Record<string, React.FC<IconProps>> = {
   Briefcase: IconBriefcase,
@@ -687,7 +814,19 @@ export const ICON_NAME_MAP: Record<string, React.FC<IconProps>> = {
   RefreshSync: IconRefreshSync,
   CheckDouble: IconCheckDouble,
   LightbulbIdea: IconLightbulbIdea,
-  CompassRadar: IconCompassRadar
+  CompassRadar: IconCompassRadar,
+  IntakeDossier: IconIntakeDossier,
+  BarcodeScan: IconBarcodeScan,
+  Fingerprint: IconFingerprint,
+  Printer: IconPrinter,
+  PenTool: IconPenTool,
+  PillarStrategy: IconPillarStrategy,
+  PillarPlanning: IconPillarPlanning,
+  PillarTechnical: IconPillarTechnical,
+  PillarSkills: IconPillarSkills,
+  PillarEcosystem: IconPillarEcosystem,
+  PillarLeadership: IconPillarLeadership,
+  PillarTech: IconPillarTech
 };
 
 // Generic Dynamic Icon resolver
