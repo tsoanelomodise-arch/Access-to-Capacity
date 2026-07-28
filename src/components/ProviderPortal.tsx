@@ -1173,17 +1173,18 @@ export default function ProviderPortal({ onViewChange, showAnnotations = true }:
 
   // Color mapping based on status
   const getStatusBadgeClass = (status: string) => {
+    const base = "px-3 py-1 rounded-full text-[10px] font-sans font-extrabold uppercase tracking-wider inline-flex items-center justify-center border shadow-2xs transition-all";
     switch (status) {
       case "Pre-Assigned":
-        return "bg-slate-100 text-slate-800 border-slate-350 font-bold border";
+        return `${base} bg-slate-100 text-slate-800 border-slate-300`;
       case "Intake Scheduled":
-        return "bg-amber-100 text-amber-900 border-amber-300 font-bold border";
+        return `${base} bg-amber-100 text-amber-900 border-amber-300`;
       case "Active":
-        return "bg-emerald-100 text-emerald-800 font-semibold rounded-full px-3 py-1 text-[10px] tracking-wide";
+        return `${base} bg-emerald-100 text-emerald-900 border-emerald-300`;
       case "Completed":
-        return "bg-sky-100 text-sky-800 font-semibold rounded-full px-3 py-1 text-[10px] tracking-wide";
+        return `${base} bg-sky-100 text-sky-900 border-sky-300`;
       default:
-        return "bg-slate-100 text-slate-700 font-semibold rounded-full px-3 py-1 text-[10px] tracking-wide";
+        return `${base} bg-slate-100 text-slate-700 border-slate-300`;
     }
   };
 

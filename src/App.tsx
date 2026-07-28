@@ -126,11 +126,11 @@ export default function App() {
           </div>
         </section>
       ) : activeView === "apply" ? (
-        <section className="py-8 sm:py-12 bg-slate-50 flex-grow" id="application-dossier-page">
+        <section className="py-8 sm:py-12 bg-gradient-to-br from-[#e2f3ec] via-[#f7f1ec] to-[#e5e9f8] flex-grow min-h-screen" id="application-dossier-page">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             {/* Breadcrumb Navigation (Hidden per design spec) */}
             <nav className="hidden text-[10px] sm:text-xs font-mono font-bold tracking-widest text-slate-500 uppercase" aria-label="Breadcrumb">
-              <ol className="inline-flex items-center space-x-1 md:space-x-2 bg-white px-3.5 py-1.5 rounded-full border border-slate-200/80 shadow-2xs">
+              <ol className="inline-flex items-center space-x-1 md:space-x-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/60 shadow-xs">
                 <li>
                   <a href="#" onClick={(e) => { e.preventDefault(); setActiveView("capability"); }} className="hover:text-slate-900 transition-colors">{fmtText("HOME_PORTAL", showAnnotations)}</a>
                 </li>
@@ -146,38 +146,38 @@ export default function App() {
             </nav>
 
             {/* Standalone Page Header Card */}
-            <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-4 text-left relative overflow-hidden border border-slate-800">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-6">
+            <div className="bg-white/80 backdrop-blur-xl border border-white/80 rounded-[2.25rem] p-8 sm:p-10 shadow-xl shadow-slate-200/50 space-y-4 text-left relative overflow-hidden">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/60 pb-6">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-amber-400 shrink-0 shadow-inner">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-800 shrink-0 shadow-xs">
                     <IntakeDossier className="w-6 h-6" />
                   </div>
                   <div>
                     {showAnnotations && (
-                      <span className="text-[10px] font-sans font-bold text-amber-400 uppercase tracking-widest block mb-1">
+                      <span className="text-[10px] font-sans font-bold text-emerald-800 uppercase tracking-widest block mb-1">
                         SERVICE PROVIDER AUTHENTICATION INTAKE PORTAL
                       </span>
                     )}
-                    <h1 className="font-sans font-black text-3xl sm:text-4xl tracking-tight text-white uppercase leading-none">
+                    <h1 className="font-sans font-black text-3xl sm:text-4xl tracking-tight text-slate-900 uppercase leading-none">
                       Application Intake Dossier
                     </h1>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 self-start sm:self-auto">
-                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <div className="bg-emerald-100/90 text-emerald-900 border border-emerald-300/80 px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-2xs">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
                     <span>VERIFIED_INTAKE</span>
                   </div>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300/70 font-sans font-normal leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-600 font-sans font-medium leading-relaxed max-w-2xl">
                 Complete the official registration and verification dossier below to enrol your SMME into the Service Provider Authentication developmental programs. All submissions undergo live CIPC and SARS compliance verification.
               </p>
             </div>
 
             {/* Form Container */}
-            <div className="bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl">
-              <div className="mb-6 pb-4 border-b border-slate-100 flex items-center justify-between">
+            <div className="bg-white/80 backdrop-blur-xl border border-white/80 rounded-[2.25rem] p-6 sm:p-8 shadow-xl shadow-slate-200/50">
+              <div className="hidden mb-6 pb-4 border-b border-slate-200/60 items-center justify-between">
                 <span className="font-mono text-[9px] font-bold text-slate-400 tracking-widest flex items-center gap-1">
                   {showAnnotations && <span>[FORM_VIEW_SEC_05]</span>}
                   {renderSpecBadge("FORM_VIEW_SEC_05", "Secure Support Application Form", "Ingress Form Component", "Provides real-time submission capability for SMMEs. Handles drag-and-drop file attachments and detailed motivation statements.", "Interactive state collection → Submits structured JSON package via POST router → Triggers SARS and CIPC automated API simulator.", "Inserts record to postgres table 'satf_applications' with default status 'AWAITING_REVIEW'.")}

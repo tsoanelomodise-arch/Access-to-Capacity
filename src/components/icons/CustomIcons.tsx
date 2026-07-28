@@ -448,9 +448,10 @@ export const IconMessageSquare: React.FC<IconProps> = (props) => (
 
 export const IconUploadCloud: React.FC<IconProps> = (props) => (
   <BaseIcon {...props}>
-    <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
-    <path d="M12 12v9" />
-    <path d="m16 16-4-4-4 4" />
+    <path d="M6.5 17.5A4.5 4.5 0 0 1 5 8.7a6 6 0 0 1 11.2-1.9 4.5 4.5 0 0 1 3.3 8.7" />
+    <path d="M12 11v8" />
+    <path d="m15 14-3-3-3 3" />
+    <circle cx="12" cy="19" r="1" fill="currentColor" />
   </BaseIcon>
 );
 
